@@ -49,10 +49,10 @@ async def form_name(call, state: FSMContext):
 async def form_name(call, state: FSMContext):
     await call.message.edit_text(text=replic_sended)
     data = await state.get_data()
-    user_id = data['user_id']
-    username = data['username']
-    first_name = data['first_name']
-    last_name = data['last_name']
+    user_id = call.message.chat.id
+    username = call.message.from_user.username
+    first_name = call.message.from_user.first_name
+    last_name = call.message.from_user.last_name
     name = data['name']
     phone_number = data['phone_number']
     email = data['email']

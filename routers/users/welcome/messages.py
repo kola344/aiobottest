@@ -15,10 +15,6 @@ async def start(message: Message):
 
 @router.message(F.text == 'Заполнить форму')
 async def form(message: Message, state: FSMContext):
-    await state.update_data(user_id=message.chat.id)
-    await state.update_data(username=message.chat.username)
-    await state.update_data(first_name=message.chat.first_name)
-    await state.update_data(last_name=message.chat.last_name)
     await state.update_data(name="ФИО")
     await state.update_data(phone_number="Номер телефона")
     await state.update_data(email="Email")
